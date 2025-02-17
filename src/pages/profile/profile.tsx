@@ -1,11 +1,19 @@
 import { ProfileUI } from '@ui-pages';
 import { FC, SyntheticEvent, useEffect, useState } from 'react';
+import { useSelector } from '../../services/store';
+import { getUser, getUserData, updateUser } from '../../services/slices/user';
+import { useDispatch } from '../../services/store';
+import { Preloader } from '@ui';
 
 export const Profile: FC = () => {
-  /** TODO: взять переменную из стора */
+  const data = useSelector(getUserData).user;
+  const loading = useSelector(getUserData).request;
+  const [isFormChanged, setIsFormChanged] = useState(false);
+  const dispatch = useDispatch();
+
   const user = {
-    name: '',
-    email: ''
+    name: data?.name || '',
+    email: data?.email || ''
   };
 
   const [formValue, setFormValue] = useState({
@@ -15,21 +23,37 @@ export const Profile: FC = () => {
   });
 
   useEffect(() => {
-    setFormValue((prevState) => ({
-      ...prevState,
-      name: user?.name || '',
-      email: user?.email || ''
-    }));
-  }, [user]);
+    if (data) {
+      setFormValue({
+        name: data.name || '',
+        email: data.email || '',
+        password: ''
+      });
+    }
+  }, [data]);
 
-  const isFormChanged =
-    formValue.name !== user?.name ||
-    formValue.email !== user?.email ||
-    !!formValue.password;
+  useEffect(() => {
+    setIsFormChanged(
+      formValue.name !== user.name ||
+        formValue.email !== user.email ||
+        !!formValue.password
+    );
+  }, [formValue, user]);
 
   const handleSubmit = (e: SyntheticEvent) => {
     e.preventDefault();
+    dispatch(updateUser(formValue))
+      .unwrap()
+      .then(() => {
+        setIsFormChanged(false);
+        setFormValue({ ...formValue, password: '' });
+        dispatch(getUser());
+      });
   };
+
+  if (loading) {
+    return <Preloader />;
+  }
 
   const handleCancel = (e: SyntheticEvent) => {
     e.preventDefault();
@@ -38,6 +62,7 @@ export const Profile: FC = () => {
       email: user.email,
       password: ''
     });
+    setIsFormChanged(false);
   };
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -56,6 +81,4 @@ export const Profile: FC = () => {
       handleInputChange={handleInputChange}
     />
   );
-
-  return null;
 };
