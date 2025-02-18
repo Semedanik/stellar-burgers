@@ -5,6 +5,7 @@ import { OrderCardProps } from './type';
 import { TIngredient } from '@utils-types';
 import { OrderCardUI } from '../ui/order-card';
 import { getIngredientData } from '../../services/slices/ingredient';
+
 import { useSelector } from '../../services/store';
 
 const maxIngredients = 6;
@@ -27,7 +28,6 @@ export const OrderCard: FC<OrderCardProps> = memo(({ order }) => {
     );
 
     const total = ingredientsInfo.reduce((acc, item) => acc + item.price, 0);
-
     const ingredientsToShow = ingredientsInfo.slice(0, maxIngredients);
 
     const remains =

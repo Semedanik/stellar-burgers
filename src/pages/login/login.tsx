@@ -1,9 +1,8 @@
 import { FC, SyntheticEvent, useState } from 'react';
 import { LoginUI } from '@ui-pages';
-import { useSelector } from 'react-redux';
 
 import { getLoginUser, getUserData } from '../../services/slices/user';
-import { useDispatch } from '../../services/store';
+import { useDispatch, useSelector } from '../../services/store';
 import { Navigate } from 'react-router-dom';
 
 export const Login: FC = () => {

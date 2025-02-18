@@ -3,6 +3,7 @@ import { FeedUI } from '@ui-pages';
 import { FC, useEffect } from 'react';
 import { useSelector } from '../../services/store';
 import { getFeeds, selectFeedData } from '../../services/slices/feed';
+
 import { useDispatch } from '../../services/store';
 
 export const Feed: FC = () => {
