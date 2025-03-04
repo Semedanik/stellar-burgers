@@ -1,0 +1,43 @@
+{
+  "success": true,
+  "data": [
+    {
+      "_id": "1",
+      "name": "Краторная булка N-200i",
+      "type": "bun",
+      "proteins": 80,
+      "fat": 24,
+      "carbohydrates": 53,
+      "calories": 420,
+      "price": 1255,
+      "image": "https://code.s3.yandex.net/react/code/bun-02.png",
+      "image_mobile": "https://code.s3.yandex.net/react/code/bun-02-mobile.png",
+      "image_large": "https://code.s3.yandex.net/react/code/bun-02-large.png",
+      "__v": 0
+    },
+    {
+      "_id": "2",
+      "name": "Модифицированная биокотлета",
+      "type": "main",
+      "proteins": 450,
+      "fat": 150,
+      "carbohydrates": 250,
+      "calories": 4300,
+      "price": 450,
+      "image": "https://example.com/new-meat.png",
+      "__v": 1
+    },
+    {
+      "_id": "3",
+      "name": "Эксклюзивный соус",
+      "type": "sauce",
+      "proteins": 35,
+      "fat": 25,
+      "carbohydrates": 45,
+      "calories": 35,
+      "price": 199,
+      "image": "https://example.com/secret-sauce.png",
+      "__v": 0
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "name": "Галактический люминесцентный бургер Smeetanik",
+  "order": {
+    "ingredients": [
+      {
+        "_id": "smeet-bun-01",
+        "name": "Квантовая булка X-TREME",
+        "type": "bun",
+        "proteins": 55,
+        "fat": 32,
+        "carbohydrates": 78,
+        "calories": 700,
+        "price": 1299,
+        "image": "https://example.com/custom-bun.png",
+        "__v": 1
+      },
+      {
+        "_id": "smeet-main-01",
+        "name": "Кристаллы Смеетаниума",
+        "type": "main",
+        "proteins": 88,
+        "fat": 15,
+        "carbohydrates": 42,
+        "calories": 550,
+        "price": 1999,
+        "image": "https://example.com/custom-main.png",
+        "__v": 0
+      },
+      {
+        "_id": "smeet-sauce-01",
+        "name": "Соус Космический микс",
+        "type": "sauce",
+        "proteins": 25,
+        "fat": 18,
+        "carbohydrates": 35,
+        "calories": 120,
+        "price": 299,
+        "image": "https://example.com/custom-sauce.png",
+        "__v": 0
+      },
+      {
+        "_id": "smeet-bun-01",
+        "name": "Квантовая булка X-TREME",
+        "type": "bun",
+        "proteins": 55,
+        "fat": 32,
+        "carbohydrates": 78,
+        "calories": 700,
+        "price": 1299,
+        "image": "https://example.com/custom-bun.png",
+        "__v": 1
+      }
+    ],
+    "_id": "smeet-order-2024",
+    "owner": {
+      "name": "Smeetanik",
+      "email": "smeetana@mail.ru",
+      "createdAt": "2024-01-15T10:00:00.000Z",
+      "updatedAt": "2024-01-16T14:30:45.000Z"
+    },
+    "status": "done",
+    "createdAt": "2025-03-2T12:15:30.000Z",
+    "updatedAt": "2024-03-2T12:16:00.000Z",
+    "number": 240117,
+    "price": 4896
+  }
+}
